@@ -17,12 +17,12 @@ __all__ = ["build_backbone"]
 
 def build_backbone(config, model_type):
     if model_type == "det":
-        from .det_mobilenet_v3 import MobileNetV3
-        from .det_resnet import ResNet
-        from .det_resnet_vd import ResNet_vd
-        from .det_resnet_vd_sast import ResNet_SAST
-        from .rec_lcnetv3 import PPLCNetV3
-        from .rec_hgnet import PPHGNet_small
+        from .det_mobilenet_v3 import MobileNetV3 # noqa
+        from .det_resnet import ResNet # noqa
+        from .det_resnet_vd import ResNet_vd # noqa
+        from .det_resnet_vd_sast import ResNet_SAST # noqa
+        from .rec_lcnetv3 import PPLCNetV3 # noqa
+        from .rec_hgnet import PPHGNet_small # noqa
 
         support_dict = [
             "MobileNetV3",
@@ -33,17 +33,17 @@ def build_backbone(config, model_type):
             "PPHGNet_small",
         ]
     elif model_type == "rec" or model_type == "cls":
-        from .rec_mobilenet_v3 import MobileNetV3
-        from .rec_resnet_vd import ResNet
-        from .rec_resnet_fpn import ResNetFPN
-        from .rec_mv1_enhance import MobileNetV1Enhance
-        from .rec_nrtr_mtb import MTB
-        from .rec_resnet_31 import ResNet31
-        from .rec_svtrnet import SVTRNet
-        from .rec_vitstr import ViTSTR
-        from .rec_densenet import DenseNet
-        from .rec_lcnetv3 import PPLCNetV3
-        from .rec_hgnet import PPHGNet_small
+        from .rec_mobilenet_v3 import MobileNetV3 # noqa
+        from .rec_resnet_vd import ResNet # noqa
+        from .rec_resnet_fpn import ResNetFPN # noqa
+        from .rec_mv1_enhance import MobileNetV1Enhance # noqa
+        from .rec_nrtr_mtb import MTB # noqa
+        from .rec_resnet_31 import ResNet31 # noqa
+        from .rec_svtrnet import SVTRNet # noqa
+        from .rec_vitstr import ViTSTR # noqa
+        from .rec_densenet import DenseNet # noqa
+        from .rec_lcnetv3 import PPLCNetV3 # noqa
+        from .rec_hgnet import PPHGNet_small # noqa
 
         support_dict = [
             "MobileNetV1Enhance",
@@ -59,12 +59,12 @@ def build_backbone(config, model_type):
             "PPHGNet_small",
         ]
     elif model_type == "e2e":
-        from .e2e_resnet_vd_pg import ResNet
+        from .e2e_resnet_vd_pg import ResNet # noqa
 
         support_dict = ["ResNet"]
     elif model_type == "table":
-        from .table_resnet_vd import ResNet
-        from .table_mobilenet_v3 import MobileNetV3
+        from .table_resnet_vd import ResNet # noqa
+        from .table_mobilenet_v3 import MobileNetV3 # noqa
 
         support_dict = ["ResNet", "MobileNetV3"]
     else:

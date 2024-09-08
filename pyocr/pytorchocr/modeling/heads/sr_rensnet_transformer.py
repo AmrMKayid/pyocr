@@ -331,7 +331,7 @@ class BasicBlock(nn.Module):
         out = self.conv2(out)
         out = self.bn2(out)
 
-        if self.downsample != None:
+        if self.downsample is not None:
             residual = self.downsample(residual)
 
         out += residual

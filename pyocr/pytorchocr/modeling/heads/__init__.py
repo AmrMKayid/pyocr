@@ -17,24 +17,24 @@ __all__ = ["build_head"]
 
 def build_head(config, **kwargs):
     # det head
-    from .det_db_head import DBHead, PFHeadLocal
-    from .det_east_head import EASTHead
-    from .det_sast_head import SASTHead
-    from .det_pse_head import PSEHead
-    from .det_fce_head import FCEHead
-    from .e2e_pg_head import PGHead
+    from .det_db_head import DBHead, PFHeadLocal # noqa
+    from .det_east_head import EASTHead # noqa
+    from .det_sast_head import SASTHead # noqa
+    from .det_pse_head import PSEHead # noqa
+    from .det_fce_head import FCEHead # noqa
+    from .e2e_pg_head import PGHead # noqa
 
     # rec head
-    from .rec_ctc_head import CTCHead
-    from .rec_att_head import AttentionHead
-    from .rec_srn_head import SRNHead
-    from .rec_nrtr_head import Transformer
-    from .rec_sar_head import SARHead
-    from .rec_can_head import CANHead
-    from .rec_multi_head import MultiHead
+    from .rec_ctc_head import CTCHead # noqa
+    from .rec_att_head import AttentionHead # noqa
+    from .rec_srn_head import SRNHead # noqa
+    from .rec_nrtr_head import Transformer # noqa
+    from .rec_sar_head import SARHead # noqa
+    from .rec_can_head import CANHead # noqa
+    from .rec_multi_head import MultiHead # noqa
 
     # cls head
-    from .cls_head import ClsHead
+    from .cls_head import ClsHead # noqa
 
     support_dict = [
         "DBHead",
@@ -55,7 +55,7 @@ def build_head(config, **kwargs):
         "PFHeadLocal",
     ]
 
-    from .table_att_head import TableAttentionHead
+    from .table_att_head import TableAttentionHead # noqa
 
     module_name = config.pop("name")
     assert module_name in support_dict, Exception(

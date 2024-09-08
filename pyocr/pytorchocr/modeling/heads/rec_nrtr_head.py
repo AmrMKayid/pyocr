@@ -7,7 +7,7 @@ from torch.nn import ModuleList as LayerList
 from torch.nn.init import xavier_uniform_
 from torch.nn import Dropout, LayerNorm
 import numpy as np
-from ...modeling.heads.multiheadAttention import MultiheadAttention
+from torch.nn import MultiheadAttention
 from torch.nn.init import xavier_normal_
 
 
@@ -314,7 +314,6 @@ class Transformer(nn.Module):
                 src_enc = images.squeeze(2).transpose([0, 2, 1])
 
             n_bm = self.beam_size
-            src_shape = src_enc.shape
             inst_dec_beams = [Beam(n_bm) for _ in range(1)]
             active_inst_idx_list = list(range(1))
             # Repeat data for beam search
