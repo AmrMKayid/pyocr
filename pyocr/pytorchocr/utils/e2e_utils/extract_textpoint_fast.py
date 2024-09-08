@@ -18,7 +18,6 @@ from __future__ import division
 from __future__ import print_function
 
 import cv2
-import math
 
 import numpy as np
 from itertools import groupby
