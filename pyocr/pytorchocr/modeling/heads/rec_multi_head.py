@@ -1,10 +1,9 @@
-import torch
 import torch.nn as nn
 
 from ...modeling.necks.rnn import Im2Seq, SequenceEncoder
-from .rec_nrtr_head import Transformer
-from .rec_ctc_head import CTCHead
-from .rec_sar_head import SARHead
+from .rec_nrtr_head import Transformer # noqa
+from .rec_ctc_head import CTCHead # noqa
+from .rec_sar_head import SARHead # noqa
 
 
 class FCTranspose(nn.Module):
