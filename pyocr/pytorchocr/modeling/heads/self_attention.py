@@ -2,13 +2,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import math
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ...modeling.common import Activation
-import numpy as np
 
 gradient_clip = 10
 
@@ -259,7 +256,7 @@ class MultiHeadAttention(nn.Module):
             v = v.permute(0, 2, 1, 3)
 
         if cache is not None:
-            if static_kv and not "static_k" in cache:
+            if static_kv and "static_k" not in cache:
                 # for encoder-decoder attention in inference and has not cached
                 cache["static_k"], cache["static_v"] = k, v
             elif not static_kv:

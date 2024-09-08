@@ -2,12 +2,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ...modeling.common import Activation
-import numpy as np
 from .self_attention import WrapEncoderForFeature
 from .self_attention import WrapEncoder
 

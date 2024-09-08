@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn import ModuleList as LayerList
 from torch.nn.init import xavier_uniform_
-from torch.nn import Dropout, LayerNorm, Conv2d
+from torch.nn import Dropout, LayerNorm
 import numpy as np
 from ...modeling.heads.multiheadAttention import MultiheadAttention
 from torch.nn.init import xavier_normal_
