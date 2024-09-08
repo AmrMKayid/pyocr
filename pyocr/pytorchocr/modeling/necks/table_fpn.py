@@ -5,7 +5,6 @@ from __future__ import print_function
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ...modeling.common import Activation
 
 
 class TableFPN(nn.Module):

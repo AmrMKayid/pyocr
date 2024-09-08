@@ -6,8 +6,6 @@ https://github.com/PaddlePaddle/PaddleDetection/blob/release/2.3/ppdet/modeling/
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.init import xavier_normal_
-from torch.nn.init import xavier_uniform_
 # import paddle.nn as nn
 # import paddle.nn.functional as F
 # from paddle import ParamAttr

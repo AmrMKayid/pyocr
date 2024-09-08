@@ -3,7 +3,6 @@ This code is refer from:
 https://github.com/whai362/PSENet/blob/python3/models/neck/fpn.py
 """
 
-import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

@@ -1,4 +1,3 @@
-import os, sys
 import torch
 import torch.nn as nn
 from ...modeling.backbones.rec_svtrnet import Block, ConvBNLayer
