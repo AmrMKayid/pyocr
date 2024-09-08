@@ -22,7 +22,6 @@ def build_head(config, **kwargs):
     from .det_sast_head import SASTHead # noqa
     from .det_pse_head import PSEHead # noqa
     from .det_fce_head import FCEHead # noqa
-    from .e2e_pg_head import PGHead # noqa
 
     # rec head
     from .rec_ctc_head import CTCHead # noqa
@@ -54,8 +53,6 @@ def build_head(config, **kwargs):
         "MultiHead",
         "PFHeadLocal",
     ]
-
-    from .table_att_head import TableAttentionHead # noqa
 
     module_name = config.pop("name")
     assert module_name in support_dict, Exception(

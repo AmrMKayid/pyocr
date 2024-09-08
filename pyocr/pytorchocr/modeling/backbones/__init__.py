@@ -58,15 +58,6 @@ def build_backbone(config, model_type):
             "PPLCNetV3",
             "PPHGNet_small",
         ]
-    elif model_type == "e2e":
-        from .e2e_resnet_vd_pg import ResNet # noqa
-
-        support_dict = ["ResNet"]
-    elif model_type == "table":
-        from .table_resnet_vd import ResNet # noqa
-        from .table_mobilenet_v3 import MobileNetV3 # noqa
-
-        support_dict = ["ResNet", "MobileNetV3"]
     else:
         raise NotImplementedError
 

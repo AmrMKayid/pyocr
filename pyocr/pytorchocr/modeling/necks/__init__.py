@@ -23,7 +23,6 @@ def build_neck(config):
     from .pg_fpn import PGFPN
     from .fpn import FPN
     from .fce_fpn import FCEFPN
-    from .table_fpn import TableFPN
 
     support_dict = [
         "FPN",
