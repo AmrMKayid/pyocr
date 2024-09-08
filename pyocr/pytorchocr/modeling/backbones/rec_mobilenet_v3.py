@@ -1,8 +1,4 @@
-import os, sys
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from ...modeling.common import Activation
 
 from .det_mobilenet_v3 import ResidualUnit, ConvBNLayer, make_divisible
 

@@ -2,11 +2,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .det_resnet_vd import DeformableConvV2, ConvBNLayer
+from .det_resnet_vd import ConvBNLayer
 
 
 class BottleneckBlock(nn.Module):
