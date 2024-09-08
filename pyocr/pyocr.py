@@ -13,6 +13,7 @@ class PyOCR:
 
     def __init__(
         self,
+        _cache_dir:str="pyocr_model",
         use_angle_cls=False,
         devices="auto",
         model_local_dir=None,
@@ -21,6 +22,7 @@ class PyOCR:
         drop_score=0.5,
         **kwargs,
     ):
+        self._cache_dir = _cache_dir
         self.config_default_dict = {
             "det_model_path": "PaddleOCR2Pytorch/ch_ptocr_v4_det_infer.pth",
             "rec_model_path": "PaddleOCR2Pytorch/ch_ptocr_v4_rec_infer.pth",
@@ -67,7 +69,7 @@ class PyOCR:
     def _load_local_file(self, fileDict):
         for key, val in fileDict.items():
             if not val:
-                logging.warning(
+                logging.info(
                     f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
                 )
                 fileDict[key] = pathlib.Path(
@@ -80,12 +82,13 @@ class PyOCR:
     def _download_file(self, fileDict):
         for key, val in fileDict.items():
             if not val:
-                logging.warning(
+                logging.info(
                     f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
                 )
                 fileDict[key] = hf_hub_download(
                     repo_id="pk5ls20/PaddleModel",
                     filename=self.config_default_dict[key],
+                    cache_dir=self._cache_dir,
                 )
         logging.info(fileDict)
 
