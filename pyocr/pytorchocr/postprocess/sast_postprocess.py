@@ -28,8 +28,6 @@ from .locality_aware_nms import nms_locality
 
 # import paddle
 import torch
-import cv2
-import time
 
 
 class SASTPostProcess(object):

@@ -23,7 +23,6 @@ import cv2
 # import paddle
 import torch
 
-import os
 import sys
 
 

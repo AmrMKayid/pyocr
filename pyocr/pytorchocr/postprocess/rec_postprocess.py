@@ -14,7 +14,6 @@
 import re
 
 import numpy as np
-import string
 
 # import paddle
 # from paddle.nn import functional as F
