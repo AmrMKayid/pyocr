@@ -65,6 +65,7 @@ class PyOCR:
             rec_char_dict_path=self._modelFilePaths["character_dict_path"],
             drop_score=drop_score,
             use_gpu=self._use_gpu,
+            **kwargs
         )
         self.needWarmUp = needWarmUp
         self._warm_up(warmup_size) if self.needWarmUp else None

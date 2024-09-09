@@ -93,6 +93,8 @@ class TextRecognizer(BaseOCRV20):
         self.net.eval()
         if self.use_gpu:
             self.net.cuda()
+        if args.compile_net:
+            self.net = torch.compile(self.net)
 
     def resize_norm_img(self, img, max_wh_ratio):
         imgC, imgH, imgW = self.rec_image_shape

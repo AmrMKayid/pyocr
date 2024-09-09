@@ -108,6 +108,8 @@ class TextDetector(BaseOCRV20):
         self.net.eval()
         if self.use_gpu:
             self.net.cuda()
+        if self.args.compile_net:
+            self.net = torch.compile(self.net)
 
     @staticmethod
     def order_points_clockwise(pts):

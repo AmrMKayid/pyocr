@@ -90,6 +90,7 @@ class Config:
         self.e2e_char_dict_path = None  # 'pytorchocr/utils/ic15_dict.txt'
         self.enable_mkldnn = False
         self.use_pdserving = False
+        self.compile_net = True
 
         for key, value in kwargs.items():
             if hasattr(self, key):
