@@ -100,13 +100,13 @@ class PyOCR:
             logging.info(fileDict)
 
     def _warm_up(self, warmup_size):
-        logging.info("Warm up started")
+        logging.info("OCR Warm up started")
         assert (
             isinstance(warmup_size, (list, tuple)) and len(warmup_size) == 2
         ), "warmup_size must be tuple or list with 2 elems."
         img = np.random.uniform(0, 255, [warmup_size[0], warmup_size[1], 3]).astype(
             np.uint8
         )
-        for i in range(10):
+        for _ in range(3):
             _ = self.ocr(img)
-        logging.info("Warm up finished")
+        logging.info("OCR Warm up finished")
