@@ -95,7 +95,8 @@ class PyOCR:
                     filename=self.config_default_dict[key],
                     cache_dir=self._cache_dir,
                 )
-        logging.info(fileDict)
+        if self.verbose:
+            logging.info(fileDict)
 
     def _warm_up(self, warmup_size):
         logging.info("Warm up started")
