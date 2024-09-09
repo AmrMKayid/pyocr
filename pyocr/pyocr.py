@@ -20,6 +20,7 @@ class PyOCR:
         needWarmUp=False,
         warmup_size=(640, 640),
         drop_score=0.5,
+        verbose=False,
         **kwargs,
     ):
         self._cache_dir = _cache_dir
@@ -42,11 +43,13 @@ class PyOCR:
         self._modelFilePaths = {
             key: kwargs.get(key, None) for key in self._modelFileKeys
         }
+        self.verbose = verbose
         if devices == "auto":
             self._use_gpu = True if torch.cuda.is_available() else False
         else:
             self._use_gpu = True if devices == "cuda" else False
-        logging.info(f"Using device: {devices}")
+        if self.verbose:
+            logging.info(f"Using device: {devices}")
         self._model_local_dir = model_local_dir
         if self._model_local_dir:
             self._load_local_file(self._modelFilePaths)
@@ -69,9 +72,10 @@ class PyOCR:
     def _load_local_file(self, fileDict):
         for key, val in fileDict.items():
             if not val:
-                logging.info(
-                    f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
-                )
+                if self.verbose:
+                    logging.info(
+                        f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
+                    )
                 fileDict[key] = pathlib.Path(
                     self._model_local_dir, self.config_default_dict[key]
                 )
@@ -82,9 +86,10 @@ class PyOCR:
     def _download_file(self, fileDict):
         for key, val in fileDict.items():
             if not val:
-                logging.info(
-                    f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
-                )
+                if self.verbose:
+                    logging.info(
+                        f"Unspecified {key[:-5]}, using default value {self.config_default_dict[key]}"
+                    )
                 fileDict[key] = hf_hub_download(
                     repo_id="pk5ls20/PaddleModel",
                     filename=self.config_default_dict[key],
