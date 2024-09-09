@@ -13,7 +13,9 @@ class BaseOCRV20:
     def read_pytorch_weights(weights_path):
         if not os.path.exists(weights_path):
             raise FileNotFoundError("{} is not existed.".format(weights_path))
-        weights = torch.load(weights_path, weights_only=True)
+        weights = torch.load(
+            weights_path, weights_only=True, map_location=torch.device("cpu")
+        )
         return weights
 
     @staticmethod
@@ -29,8 +31,10 @@ class BaseOCRV20:
 
     def load_state_dict(self, weights):
         self.net.load_state_dict(weights)
-        # print('weights is loaded.')
 
     def load_pytorch_weights(self, weights_path):
-        self.net.load_state_dict(torch.load(weights_path, weights_only=True))
-        # print('model is loaded: {}'.format(weights_path))
+        self.net.load_state_dict(
+            torch.load(
+                weights_path, weights_only=True, map_location=torch.device("cpu")
+            )
+        )

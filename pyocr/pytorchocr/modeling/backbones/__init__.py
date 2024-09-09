@@ -17,12 +17,12 @@ __all__ = ["build_backbone"]
 
 def build_backbone(config, model_type):
     if model_type == "det":
-        from .det_mobilenet_v3 import MobileNetV3 # noqa
-        from .det_resnet import ResNet # noqa
-        from .det_resnet_vd import ResNet_vd # noqa
-        from .det_resnet_vd_sast import ResNet_SAST # noqa
-        from .rec_lcnetv3 import PPLCNetV3 # noqa
-        from .rec_hgnet import PPHGNet_small # noqa
+        from .det_mobilenet_v3 import MobileNetV3  # noqa
+        from .det_resnet import ResNet  # noqa
+        from .det_resnet_vd import ResNet_vd  # noqa
+        from .det_resnet_vd_sast import ResNet_SAST  # noqa
+        from .rec_lcnetv3 import PPLCNetV3  # noqa
+        from .rec_hgnet import PPHGNet_small  # noqa
 
         support_dict = [
             "MobileNetV3",
@@ -33,17 +33,17 @@ def build_backbone(config, model_type):
             "PPHGNet_small",
         ]
     elif model_type == "rec" or model_type == "cls":
-        from .rec_mobilenet_v3 import MobileNetV3 # noqa
-        from .rec_resnet_vd import ResNet # noqa
-        from .rec_resnet_fpn import ResNetFPN # noqa
-        from .rec_mv1_enhance import MobileNetV1Enhance # noqa
-        from .rec_nrtr_mtb import MTB # noqa
-        from .rec_resnet_31 import ResNet31 # noqa
-        from .rec_svtrnet import SVTRNet # noqa
-        from .rec_vitstr import ViTSTR # noqa
-        from .rec_densenet import DenseNet # noqa
-        from .rec_lcnetv3 import PPLCNetV3 # noqa
-        from .rec_hgnet import PPHGNet_small # noqa
+        from .rec_mobilenet_v3 import MobileNetV3  # noqa
+        from .rec_resnet_vd import ResNet  # noqa
+        from .rec_resnet_fpn import ResNetFPN  # noqa
+        from .rec_mv1_enhance import MobileNetV1Enhance  # noqa
+        from .rec_nrtr_mtb import MTB  # noqa
+        from .rec_resnet_31 import ResNet31  # noqa
+        from .rec_svtrnet import SVTRNet  # noqa
+        from .rec_vitstr import ViTSTR  # noqa
+        from .rec_densenet import DenseNet  # noqa
+        from .rec_lcnetv3 import PPLCNetV3  # noqa
+        from .rec_hgnet import PPHGNet_small  # noqa
 
         support_dict = [
             "MobileNetV1Enhance",

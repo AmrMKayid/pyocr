@@ -1,9 +1,11 @@
+import torch
 import torch.nn as nn
 
 from pyocr.pytorchocr.modeling.backbones import build_backbone
 from pyocr.pytorchocr.modeling.heads import build_head
 from pyocr.pytorchocr.modeling.necks import build_neck
 from pyocr.pytorchocr.modeling.transforms import build_transform
+
 
 class BaseModel(nn.Module):
     def __init__(self, config, **kwargs):

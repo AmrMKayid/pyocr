@@ -13,9 +13,9 @@ class PyOCR:
 
     def __init__(
         self,
-        _cache_dir:str="pyocr_model",
+        _cache_dir: str = "pyocr_model",
         use_angle_cls=False,
-        devices="auto",
+        devices="cpu",
         model_local_dir=None,
         needWarmUp=False,
         warmup_size=(640, 640),

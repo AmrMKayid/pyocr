@@ -9,10 +9,10 @@ __all__ = ["build_post_process"]
 
 
 def build_post_process(config, global_config=None):
-    from .db_postprocess import DBPostProcess # noqa
-    from .east_postprocess import EASTPostProcess # noqa
-    from .fce_postprocess import FCEPostProcess # noqa
-    from .rec_postprocess import ( # noqa
+    from .db_postprocess import DBPostProcess  # noqa
+    from .east_postprocess import EASTPostProcess  # noqa
+    from .fce_postprocess import FCEPostProcess  # noqa
+    from .rec_postprocess import (  # noqa
         CTCLabelDecode,
         AttnLabelDecode,
         SRNLabelDecode,
@@ -22,8 +22,8 @@ def build_post_process(config, global_config=None):
         ViTSTRLabelDecode,
         RFLLabelDecode,
     )
-    from .cls_postprocess import ClsPostProcess # noqa
-    from .rec_postprocess import CANLabelDecode # noqa
+    from .cls_postprocess import ClsPostProcess  # noqa
+    from .rec_postprocess import CANLabelDecode  # noqa
 
     support_dict = [
         "DBPostProcess",
@@ -44,7 +44,7 @@ def build_post_process(config, global_config=None):
     ]
 
     if config["name"] == "PSEPostProcess":
-        from .pse_postprocess import PSEPostProcess # noqa
+        from .pse_postprocess import PSEPostProcess  # noqa
 
         support_dict.append("PSEPostProcess")
 
